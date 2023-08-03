@@ -172,8 +172,8 @@ for iteration in range(iterationNum):
                 '.' * (pretty_index + 1)
             ), end='')
 
-            print("[+] Step: {}".format(step + 1), file=w_file)
-	    print('1')
+            print('1')
+	    
             # Determine the client and model for this step
             client_id = state[2]
             if client_id == 1:
