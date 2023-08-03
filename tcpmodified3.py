@@ -173,7 +173,6 @@ for iteration in range(iterationNum):
             ), end='')
 
             print('1')
-	    
             # Determine the client and model for this step
             client_id = state[2]
             if client_id == 1:
