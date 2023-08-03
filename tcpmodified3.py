@@ -173,7 +173,7 @@ for iteration in range(iterationNum):
             ), end='')
 
             print("[+] Step: {}".format(step + 1), file=w_file)
-
+	    print('1')
             # Determine the client and model for this step
             client_id = state[2]
             if client_id == 1:
@@ -237,7 +237,7 @@ for iteration in range(iterationNum):
             print("\t[!] Reward: ", reward, file=w_file)
 
             next_state = np.reshape(next_state, [1, state_size])
-
+	    print('2')
             if state[2] == 1:
                 cWnd_history_client1.append(cWnd)
                 tp_history_client1.append(throughput)
@@ -253,7 +253,8 @@ for iteration in range(iterationNum):
             # DQN - function approximation using neural networks
             target = reward
             if not done:
-                target = (reward + discount_factor * np.amax(model.predict(next_state)[0]))
+		print('3')
+                target = (reward + discount_factor * np.amax(current_model.predict(next_state)[0]))
             target_f = current_model.predict(state)
             target_f[0][action_index] = target
             current_model.fit(state, target_f, epochs=1, verbose=0)
