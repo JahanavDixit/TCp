@@ -148,7 +148,7 @@ rew_history_client2 = []
 recency = maxSteps // 15
 
 
-done = False
+done = True
 
 pretty_slash = ['\\', '|', '/', '-']
 
