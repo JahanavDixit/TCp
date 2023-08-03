@@ -237,7 +237,6 @@ for iteration in range(iterationNum):
             print("\t[!] Reward: ", reward, file=w_file)
 
             next_state = np.reshape(next_state, [1, state_size])
-	    print('2')
             if state[2] == 1:
                 cWnd_history_client1.append(cWnd)
                 tp_history_client1.append(throughput)
