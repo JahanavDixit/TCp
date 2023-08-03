@@ -253,9 +253,9 @@ for iteration in range(iterationNum):
             target = reward
             if not done:
                 target = (reward + discount_factor * np.amax(current_model.predict(next_state)[0]))
+            current_model.fit(state, target_f, epochs=1, verbose=0)	    
             target_f = current_model.predict(state)
             target_f[0][action_index] = target
-            current_model.fit(state, target_f, epochs=1, verbose=0)
 
             # Update state
             state = next_state
