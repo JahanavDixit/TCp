@@ -252,7 +252,6 @@ for iteration in range(iterationNum):
             # DQN - function approximation using neural networks
             target = reward
             if not done:
-		print('3')
                 target = (reward + discount_factor * np.amax(current_model.predict(next_state)[0]))
             target_f = current_model.predict(state)
             target_f[0][action_index] = target
